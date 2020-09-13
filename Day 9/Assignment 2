@@ -1,0 +1,17 @@
+def armstrong(size):
+    for number in range(size):
+        l = len(str(number))
+        s = 0
+        i = number
+        while i > 0:
+            no = i % 10
+            s += no ** l
+            i //= 10
+        if number == s:
+            yield number
+        else:
+            continue
+
+
+gen = armstrong(1000)
+print(list(gen))
