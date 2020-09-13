@@ -1,0 +1,36 @@
+%%writefile checkisprime.py
+'''
+A file to check prime number
+'''
+A = int(input("Enter number:\n"))
+def checkprime(num):
+    '''
+    A function to check whether the entered number is prime or not
+    '''
+    prime = 1
+    for i in range(2, num):
+        if num % i == 0:
+            prime = 0
+            return False
+    if prime == 1:
+        pass
+    return True
+
+checkprime(A)
+
+import checkisprime
+
+checkisprime.checkprime(int(input("Enter number:\n")))
+
+%%writefile testprime.py
+import unittest
+import checkisprime
+
+class testprimenum(unittest.TestCase):
+  def testingonenum(self):
+    a = 71
+    result = checkisprime.checkprime(a)
+    self.assertTrue(result)
+
+if __name__=="__main__":
+  unittest.main()
